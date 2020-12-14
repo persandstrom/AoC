@@ -1,5 +1,6 @@
 use std::io::{self, BufRead};
 use std::vec::Vec;
+use std::time::{Duration, SystemTime};
 
 fn main() {
     let stdin = io::stdin();
@@ -9,15 +10,13 @@ fn main() {
         adapters.push(line.unwrap().parse::<i32>().unwrap());
     }
     
+    let start = SystemTime::now();
     adapters.sort();
     adapters.push(adapters.last().unwrap() + 3);
 
     let mut sums = Vec::new();
-    for (pos, _adapter) in adapters.iter().enumerate() {
-        if pos == 0 {
-            sums.push(1);
-            continue;
-        }
+    sums.push(1);
+    for pos in 1..adapters.len()-1 {
         let mut sum = 0i64;
         let mut bt = pos - 1;
         while adapters[pos] - adapters[bt] <= 3 {
@@ -29,6 +28,6 @@ fn main() {
         }
         sums.push(sum)
     }
-
+    println!("{:?}", start.elapsed());
     println!("{:?}", sums.last().unwrap());
 }

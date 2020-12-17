@@ -19,7 +19,6 @@ nr = range(-1, 2)
 neighbours = [(x, y, z) for x, y, z in
               [(x, y, z) for x in nr for y in nr for z in nr
                if (x, y, z) != (0, 0, 0)]]
-print(neighbours)
 
 for x,  row in enumerate(initial):
     for y, col in enumerate(row):
@@ -30,7 +29,8 @@ for cycle in range(1, cycles + 1):
     xr = range(-cycle, X + cycle)
     yr = range(-cycle, Y + cycle)
     zr = range(-cycle, Z + cycle)
-    for x, y, z in [(x, y, z) for x in xr for y in yr for z in zr]:
+    r = [(x, y, z) for x in xr for y in yr for z in zr]
+    for x, y, z in r:
         count = sum(1 for nx, ny, nz in neighbours
                     if pocket[x+nx][y+ny][z+nz] == '#')
         new_pocket[x][y][z] = '#'\
@@ -38,6 +38,4 @@ for cycle in range(1, cycles + 1):
             else '.'
     pocket = new_pocket
     if cycle == cycles:
-        print(sum(
-            1 for x, y, z in [(x, y, z) for x in xr for y in yr for z in zr]
-            if pocket[x][y][z] == '#'))
+        print(sum(1 for x, y, z in r if pocket[x][y][z] == '#'))

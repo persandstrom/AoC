@@ -15,9 +15,11 @@ def deep_dict():
 
 
 pocket = deep_dict()
-nr = range(-1, 1)
-neighbours = [(x, y, z) for x, y, z in for x in nr for y in nr for z in nr
-              if x, y, z != 0, 0, 0]
+nr = range(-1, 2)
+neighbours = [(x, y, z) for x, y, z in
+              [(x, y, z) for x in nr for y in nr for z in nr
+               if (x, y, z) != (0, 0, 0)]]
+print(neighbours)
 
 for x,  row in enumerate(initial):
     for y, col in enumerate(row):

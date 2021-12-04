@@ -5,7 +5,6 @@ called_numbers = [int(i) for i in input.pop(0).split(",")]
 boards = [int(num) for num in ' '.join(input).split()]
 marked = [False for i in range(len(boards))]
 bingoed = set()
-last = 0
 
 
 def dot(called):

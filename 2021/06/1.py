@@ -1,5 +1,4 @@
 import sys
-import re
 
 input = [row.strip() for row in sys.stdin if row.strip() != '']
 data = [int(nr) for nr in input[0].split(',')]

@@ -1,7 +1,5 @@
 import sys
 
-rounds = [row.strip() for row in sys.stdin]
-
 points = {
     "A X": 3,
     "A Y": 4,
@@ -13,4 +11,4 @@ points = {
     "C Y": 6,
     "C Z": 7}
 
-print(sum([points[round] for round in rounds]))
+print(sum([points[row.strip()] for row in sys.stdin]))

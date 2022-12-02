@@ -13,10 +13,4 @@ points = {
     "C Y": 2,
     "C Z": 6}
 
-score = 0
-
-for round in rounds:
-    score += points[round] 
-
-print(score)
-
+print(sum([points[round] for round in rounds]))

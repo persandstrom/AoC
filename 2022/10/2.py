@@ -1,6 +1,5 @@
 import sys
 
-X=1
 ss=[1,1]
 c=0
 
@@ -17,5 +16,5 @@ def draw(i, x):
 
 out = [draw(i, x) for i, x in enumerate(ss[1:])]
 
-for i in range(0,240, 40):
+for i in range(0, 240, 40):
     print("".join(out[i:i+40]))

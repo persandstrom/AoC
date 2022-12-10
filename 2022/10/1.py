@@ -1,6 +1,5 @@
 import sys
 
-X=1
 ss=[1,1]
 c=0
 

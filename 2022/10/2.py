@@ -1,7 +1,6 @@
 import sys
 
 ss=[1,1]
-c=0
 
 for op in [row.strip() for row in sys.stdin]:
     instr = op[0:4]

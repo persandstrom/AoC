@@ -38,6 +38,7 @@ for i in range(20):
                 items[throws_to_true[monkey]].append(item)
             else:
                 items[throws_to_false[monkey]].append(item)
+
 inspections = sorted(inspections)
 print(inspections[-1]*inspections[-2])
 

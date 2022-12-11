@@ -28,15 +28,15 @@ for row in [row.strip() for row in sys.stdin]:
 
 monkeys = range(len(items))
 
-div_sum=1
+div_prod=1
 for test_divider in test_dividers:
-    div_sum = div_sum*test_divider
+    div_prod *= test_divider
 
 for i in range(10000):
     for monkey in monkeys:
         while items[monkey]:
             item = items[monkey].pop()
-            item = operations[monkey](item) % div_sum
+            item = operations[monkey](item) % div_prod
             inspections[monkey] += 1
             if item % test_dividers[monkey] == 0:
                 items[throws_to_true[monkey]].append(item)

@@ -1,6 +1,4 @@
 import sys
-import time
-import os
 
 max_x, min_x, max_y = 0, sys.maxsize, 0
 

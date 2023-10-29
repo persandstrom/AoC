@@ -1,0 +1,15 @@
+#include <string>
+#include <map>
+#include "file_reader.h"
+
+#pragma once
+
+
+using DayFunction = std::function<std::string(FileReader&)>;
+
+@NAMESPACE_DECLARATIONS@
+
+std::map<std::pair<int, int>, DayFunction> day_function = {
+@MAP_ITEMS@
+};
+

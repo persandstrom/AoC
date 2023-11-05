@@ -1,5 +1,5 @@
-#include "common/file_reader.h"
-#include "forward_declared_functions.h"
+#include "file_reader.h"
+#include "build/forward_declared_functions.h"
 
 #include <iostream>
 #include <fstream>

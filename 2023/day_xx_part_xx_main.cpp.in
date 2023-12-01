@@ -1,0 +1,22 @@
+#include "../day_@NAMESPACE_DAY@_part_@NAMESPACE_PART@.h"
+
+#include "../file_reader.h"
+
+#include <iostream>
+#include <fstream>
+#include <chrono>
+
+int main() {
+    auto begin = std::chrono::steady_clock::now();
+    FileReader reader("day_@NAMESPACE_DAY@_input");
+    auto result = day_@NAMESPACE_DAY@_part_@NAMESPACE_PART@::run(reader);
+
+    auto end = std::chrono::steady_clock::now();
+    std::cout << "result: "
+              << result 
+              << " execution time = "
+              << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()
+              << " µs"
+              << std::endl;
+    return 0;
+}

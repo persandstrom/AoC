@@ -8,17 +8,6 @@ namespace day_01_part_02 {
 std::string run(FileReader& reader) {
     
     int sum = 0;
-    const std::string zero = "zero";
-    const std::string one = "one";
-    const std::string two = "two";
-    const std::string three = "three";
-    const std::string four = "four";
-    const std::string five = "five";
-    const std::string six = "six";
-    const std::string seven = "seven";
-    const std::string eight = "eight";
-    const std::string nine = "nine";
-
 
     reader.for_each_line([&sum](const std::string& line){
         char first = 0; char last = 0; char val = 0;

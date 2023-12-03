@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.22)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
-
+set(CMAKE_BUILD_TYPE Debug)
 
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
@@ -16,6 +16,7 @@ file(GLOB TEST_FILES
 )
 add_executable(aoc_2023_test
     ${TEST_FILES}
+    aoc_util.cpp
     )
 
 # Link GTest libraries
@@ -40,7 +41,7 @@ foreach(HEADER ${HEADER_FILES})
     list(APPEND MAP_ITEMS "{{${NAMESPACE_DAY}, ${NAMESPACE_PART}}, day_${NAMESPACE_DAY}_part_${NAMESPACE_PART}::run},")
     set(INCLUDE_PATH "day_${NAMESPACE_DAY}_part_${NAMESPACE_PART}.h")
     configure_file(day_xx_part_xx_main.cpp.in day_${NAMESPACE_DAY}_part_${NAMESPACE_PART}_main.cpp @ONLY)
-    add_executable(aoc_2023_day_${NAMESPACE_DAY}_part_${NAMESPACE_PART} build/day_${NAMESPACE_DAY}_part_${NAMESPACE_PART}_main.cpp)
+    add_executable(aoc_2023_day_${NAMESPACE_DAY}_part_${NAMESPACE_PART} build/day_${NAMESPACE_DAY}_part_${NAMESPACE_PART}_main.cpp aoc_util.cpp)
 
 endforeach()
 

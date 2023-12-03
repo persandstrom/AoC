@@ -37,10 +37,8 @@ std::string run(FileReader& reader) {
             }
             if (!first) {
                 first = val;
-                last = val;
-            } else {
-                last = val;
             }
+            last = val;   
         }
 
         sum += stoi(std::string{first, last});

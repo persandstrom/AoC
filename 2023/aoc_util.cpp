@@ -1,4 +1,5 @@
 #include "aoc_util.h"
+#include <sstream>
 
 namespace aoc {
     void check_adjecent(
@@ -36,4 +37,6 @@ namespace aoc {
             }
         }
     }
+
+
 }

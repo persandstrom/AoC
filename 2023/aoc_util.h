@@ -27,4 +27,9 @@ namespace aoc {
         }
         return result;
     }
+
+
+    inline std::string coord_to_string(const int x, const int y) {
+        return std::to_string(x) + "," + std::to_string(y);
+    }
 }

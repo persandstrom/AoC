@@ -5,7 +5,6 @@
 #include <vector>
 #include "aoc_util.h"
 #include <unordered_map>
-#include <ranges>
 #include <cmath>
 
 using namespace std;
@@ -26,7 +25,6 @@ std::string run(FileReader& reader) {
             sequences.push_back(sequence);
         }
 
-        //sequences.back().push_back(0);
         for(int64_t i=sequences.size()-2; i>=0; i--) {
             sequences.at(i).insert(sequences.at(i).begin(), sequences.at(i).front() - sequences.at(i+1).front());
         }

@@ -10,10 +10,6 @@ using namespace std;
 
 namespace day_03_part_02 {
 
-inline std::string coord_to_id(const int x, const int y) {
-    return std::to_string(x) + "," + std::to_string(y);
-}
-
 std::string run(FileReader& reader) {
     
     auto input = reader.to_vector();   
@@ -38,7 +34,7 @@ std::string run(FileReader& reader) {
             if (nr_found) {
                 aoc::check_adjecent(input, x, y, [&adjacent_gears](const int nx, const int ny, const char c) {
                     if (c=='*') {
-                        adjacent_gears.insert(coord_to_id(nx,ny));
+                        adjacent_gears.insert(aoc::coord_to_string(nx,ny));
                     }
                 });
             }

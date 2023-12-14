@@ -3,6 +3,7 @@
 #include <functional>
 #include <string>
 #include <vector>
+#include <sstream>
 
 namespace aoc {
     void check_adjecent(
@@ -23,6 +24,20 @@ namespace aoc {
         std::vector<T> result;
         T tmp;
         while(csv >> tmp) {
+            result.push_back(tmp);
+        }
+        return result;
+    }
+
+    template<typename T>
+    std::vector<T> csv_to_vector(const std::string& line, const char delimiter) {
+        std::istringstream csv(line);
+        std::vector<T> result;
+        std::string token;
+        while (std::getline(csv, token, delimiter)) {
+            std::istringstream tokenStream(token);
+            T tmp;
+            tokenStream >> tmp;
             result.push_back(tmp);
         }
         return result;

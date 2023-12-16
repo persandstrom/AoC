@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <iterator>
 
 namespace aoc {
     void check_adjecent(
@@ -47,4 +48,6 @@ namespace aoc {
     inline std::string coord_to_string(const int x, const int y) {
         return std::to_string(x) + "," + std::to_string(y);
     }
+
+    size_t hash_string_vector(const std::vector<std::string> & v);
 }

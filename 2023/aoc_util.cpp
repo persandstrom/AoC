@@ -38,4 +38,10 @@ namespace aoc {
         }
     }
 
+    size_t hash_string_vector(const std::vector<std::string> & v) {
+        std::ostringstream imploded;
+        std::copy(v.begin(), v.end(), std::ostream_iterator<std::string>(imploded));
+        return std::hash<std::string>{}(imploded.str());
+    }
+
 }

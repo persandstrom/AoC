@@ -87,9 +87,7 @@ std::string run(FileReader& reader) {
     auto dish = reader.to_vector();
     vector<size_t> hashes;
     auto among_hashes = [&hashes](const vector<string>& v)->int{
-        std::ostringstream imploded;
-        std::copy(v.begin(), v.end(), ostream_iterator<string>(imploded));
-        auto v_hash = std::hash<string>{}(imploded.str());
+        auto v_hash = aoc::hash_string_vector(v);
         auto hashes_it = std::find(hashes.begin(), hashes.end(), v_hash);
         if (hashes_it != hashes.end()) {
             return hashes.end() - hashes_it;

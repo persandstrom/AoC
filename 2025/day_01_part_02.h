@@ -28,7 +28,6 @@ std::string run(FileReader& reader) {
             state.zeroes += (direction == -1 && new_position > state.dail_position ) ? 1 : 0;
         }
         state.zeroes += rotations;
-        std::cout << "direction: " << direction << " times: " << times << " rotations: " << rotations << " remainder: " << remainder <<" new position: " << new_position << " z: " << state.zeroes <<std::endl;
         state.dail_position = new_position;
 
     });
